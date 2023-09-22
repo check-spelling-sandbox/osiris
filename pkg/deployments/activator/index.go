@@ -86,7 +86,7 @@ func (a *activator) updateIndex() {
 		}
 
 		// Determine the "default" ingress port. When a request arrives at the
-		// activator via an ingress conroller, the request's host header won't
+		// activator via an ingress controller, the request's host header won't
 		// indicate a port. After activation is complete, the activator needs to
 		// forward the request to the service (which is now backed by application
 		// endpoints). It's important to know which service port to forward the
