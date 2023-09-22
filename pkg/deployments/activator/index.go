@@ -102,7 +102,7 @@ func (a *activator) updateIndex() {
 				ingressDefaultPort = fmt.Sprintf("%d", svc.Spec.Ports[0].Port)
 			} else {
 				// Look for a port named "http". If found, that's it. While we're
-				// looping also look to see if the servie exposes port 80. If no port
+				// looping also look to see if the service exposes port 80. If no port
 				// is named "http", we'll assume 80 (if exposed) is the default port.
 				var foundPort80 bool
 				for _, port := range svc.Spec.Ports {
