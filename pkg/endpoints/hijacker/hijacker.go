@@ -78,7 +78,7 @@ func (h *hijacker) Run(ctx context.Context) {
 			)
 			defer cancel()
 			h.srv.Shutdown(shutdownCtx) // nolint: errcheck
-		case <-doneCh: // The server shut down on its own, perhaps due to error
+		case <-doneCh: // The server shut down on its own, perhaps due to an error
 		}
 	}()
 

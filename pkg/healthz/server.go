@@ -37,7 +37,7 @@ func RunServer(ctx context.Context, port int) {
 			)
 			defer cancel()
 			srv.Shutdown(shutdownCtx) // nolint: errcheck
-		case <-doneCh: // The server shut down on its own, perhaps due to error
+		case <-doneCh: // The server shut down on its own, perhaps due to an error
 		}
 	}()
 

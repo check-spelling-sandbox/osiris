@@ -64,7 +64,7 @@ func (i *injector) Run(ctx context.Context) {
 			)
 			defer cancel()
 			i.srv.Shutdown(shutdownCtx) // nolint: errcheck
-		case <-doneCh: // The server shut down on its own, perhaps due to error
+		case <-doneCh: // The server shut down on its own, perhaps due to an error
 		}
 	}()
 

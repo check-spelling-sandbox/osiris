@@ -75,7 +75,7 @@ func (s *singlePortProxy) run(ctx context.Context) {
 			)
 			defer cancel()
 			s.srv.Shutdown(shutdownCtx) // nolint: errcheck
-		case <-doneCh: // The server shut down on its own, perhaps due to error
+		case <-doneCh: // The server shut down on its own, perhaps due to an error
 		}
 	}()
 
