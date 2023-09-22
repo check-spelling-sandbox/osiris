@@ -11,7 +11,7 @@ import (
 )
 
 // getServicePatchOperations returns a slice of patch operations that will
-// ensures that an Osiris-enabled service is selector-less and that the
+// ensure that an Osiris-enabled service is selector-less and that the
 // would-be selector is encoded and stored in an annotation. The practical
 // effect of this is that Kubernetes' built-in endpoints controller will not
 // manage the endpoints object corresponding to this service-- thereby
