@@ -79,7 +79,7 @@ func (s *osirisScraper) Scrape(pod *corev1.Pod) *metrics.ProxyRequestCount {
 	var prc metrics.ProxyRequestCount
 	if err := json.Unmarshal(bodyBytes, &prc); err != nil {
 		glog.Errorf(
-			"Error umarshaling metrics request response from %s: %s",
+			"Error unmarshaling metrics request response from %s: %s",
 			target,
 			err,
 		)
