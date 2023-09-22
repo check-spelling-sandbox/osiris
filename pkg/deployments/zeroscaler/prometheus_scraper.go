@@ -66,7 +66,7 @@ func newPrometheusScraper(config metricsScraperConfig) (*prometheusScraper, erro
 	}, nil
 }
 
-func (s *prometheusScraper) Scrap(pod *corev1.Pod) *metrics.ProxyRequestCount {
+func (s *prometheusScraper) Scrape(pod *corev1.Pod) *metrics.ProxyRequestCount {
 	target := fmt.Sprintf("http://%s:%d%s", pod.Status.PodIP, s.config.Port, s.config.Path)
 
 	resp, err := s.httpClient.Get(target)

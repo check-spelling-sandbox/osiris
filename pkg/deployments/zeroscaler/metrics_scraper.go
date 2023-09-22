@@ -15,7 +15,7 @@ type metricsScraperConfig struct {
 }
 
 type metricsScraper interface {
-	Scrap(pod *corev1.Pod) *metrics.ProxyRequestCount
+	Scrape(pod *corev1.Pod) *metrics.ProxyRequestCount
 }
 
 func newMetricsScraper(config metricsScraperConfig) (metricsScraper, error) {

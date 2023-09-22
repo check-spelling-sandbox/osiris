@@ -39,7 +39,7 @@ func newOsirisScraper() *osirisScraper {
 	}
 }
 
-func (s *osirisScraper) Scrap(pod *corev1.Pod) *metrics.ProxyRequestCount {
+func (s *osirisScraper) Scrape(pod *corev1.Pod) *metrics.ProxyRequestCount {
 	podMetricsPort, found := s.getMetricsPort(pod)
 	if !found {
 		glog.Errorf("Pod %s has no proxy container", pod.Name)

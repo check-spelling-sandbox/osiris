@@ -135,7 +135,7 @@ func (m *metricsCollector) collectMetrics(ctx context.Context) {
 				go func(pod *corev1.Pod) {
 					defer scrapeWG.Done()
 					// Get the results
-					prc := m.scraper.Scrap(pod)
+					prc := m.scraper.Scrape(pod)
 					if prc == nil {
 						mustNotDecide = true
 					} else {
