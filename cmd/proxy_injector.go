@@ -24,6 +24,6 @@ func RunProxyInjector(ctx context.Context) {
 		)
 	}
 
-	// Run the proxy injexctor
+	// Run the proxy injector
 	proxy.NewInjector(cfg).Run(ctx)
 }

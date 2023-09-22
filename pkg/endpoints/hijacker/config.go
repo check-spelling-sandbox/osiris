@@ -4,7 +4,7 @@ import "github.com/kelseyhightower/envconfig"
 
 const envconfigPrefix = "OSIRIS_ENDPOINTS_HIJACKER"
 
-// Config represents configuration options for the Osiris Proxy Injecgtor
+// Config represents configuration options for the Osiris Proxy Injector
 // webhook server
 type Config struct {
 	TLSCertFile string `envconfig:"TLS_CERT_FILE" required:"true"`
