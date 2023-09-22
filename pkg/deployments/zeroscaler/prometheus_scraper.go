@@ -44,10 +44,10 @@ func newPrometheusScraper(config metricsScraperConfig) (*prometheusScraper, erro
 
 	// check for missing values
 	if cfg.Port == 0 {
-		return nil, errors.New("Prometheus metrics can't be scraped: missing port")
+		return nil, errors.New("prometheus metrics can't be scraped: missing port")
 	}
 	if len(cfg.RequestCountMetricName) == 0 {
-		return nil, errors.New("Prometheus metrics can't be scraped: missing requestCountMetricName")
+		return nil, errors.New("prometheus metrics can't be scraped: missing requestCountMetricName")
 	}
 
 	// default values
