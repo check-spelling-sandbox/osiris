@@ -196,7 +196,7 @@ func (e *endpointsManager) syncEndpoints() {
 			})
 		}
 		if !foundSuitableAppPod {
-			// None of the ready pods expose a back end service for this service's
+			// None of the ready pods expose a backend service for this service's
 			// port. i.e. There are no endpoints. Add activator endpoints instead.
 			for _, proxyPod := range e.controller.readyActivatorPods {
 				subsets = append(subsets, corev1.EndpointSubset{
