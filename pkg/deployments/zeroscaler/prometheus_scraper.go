@@ -27,7 +27,7 @@ type prometheusScraperConfig struct {
 	RequestCountMetricLabels map[string]string `json:"requestCountMetricLabels"`
 }
 
-// prometheusScraper is a metrics scraper that scraps metrics exposed by
+// prometheusScraper is a metrics scraper that scrapes metrics exposed by
 // the pods using the prometheus format. It expects the scraped pods to
 // expose an HTTP endpoint at a given port/path with the metrics in the
 // prometheus format.
