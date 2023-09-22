@@ -78,7 +78,7 @@ func TestGetMetricsScraperConfig(t *testing.T) {
 			},
 		},
 		{
-			name: "non-json content should fallback to osiris",
+			name: "non-json content should fall back to osiris",
 			annotations: map[string]string{
 				k8s.MetricsCollectorAnnotationName: "some non-json content",
 			},
