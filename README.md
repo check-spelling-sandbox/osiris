@@ -118,7 +118,7 @@ replicas, annotate the deployment like so:
  apiVersion: apps/v1
  kind: Deployment
  metadata:
-   namespace: my-aoo
+   namespace: my-app-namespace
    name: my-app
 +  annotations:
 +    osiris.dm.gg/enableScaling: "true"
