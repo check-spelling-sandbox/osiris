@@ -94,7 +94,7 @@ func (h *hijacker) Run(ctx context.Context) {
 	close(doneCh)
 }
 
-// handleRequest serves requets to mutate an Osiris-enabed service
+// handleRequest serves requets to mutate an Osiris-enabled service
 func (h *hijacker) handleRequest(w http.ResponseWriter, r *http.Request) {
 	defer r.Body.Close()
 
