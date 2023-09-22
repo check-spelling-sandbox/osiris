@@ -106,7 +106,7 @@ func (z *zeroscaler) syncDeployment(obj interface{}) {
 		if *deployment.Spec.Replicas > 0 &&
 			deployment.Status.AvailableReplicas <= minReplicas {
 			glog.Infof(
-				"Osiris-enabled deployment %s in namespace %s is running the minimun "+
+				"Osiris-enabled deployment %s in namespace %s is running the minimum "+
 					"number of replicas or fewer; ensuring metrics collection",
 				deployment.Name,
 				deployment.Namespace,
@@ -160,7 +160,7 @@ func (z *zeroscaler) syncStatefulSet(obj interface{}) {
 		if *statefulSet.Spec.Replicas > 0 &&
 			statefulSet.Status.ReadyReplicas <= minReplicas {
 			glog.Infof(
-				"Osiris-enabled statefulSet %s in namespace %s is running the minimun "+
+				"Osiris-enabled statefulSet %s in namespace %s is running the minimum "+
 					"number of replicas or fewer; ensuring metrics collection",
 				statefulSet.Name,
 				statefulSet.Namespace,
