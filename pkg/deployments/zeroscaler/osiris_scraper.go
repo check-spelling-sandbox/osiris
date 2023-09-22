@@ -21,7 +21,7 @@ const (
 )
 
 // osirisScraper is a metrics scraper that scraps metrics from the osiris proxy.
-// It expects the scraped pods to contain a proxy that returned its metrics at
+// It expects the scraped pods to contain a proxy that returns its metrics at
 // the /metrics path, on a port with a well-identified name.
 // This is the default metrics scraper implementation.
 type osirisScraper struct {
