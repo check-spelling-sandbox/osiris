@@ -143,7 +143,7 @@ func extractPrometheusMetricValue(metric io_prometheus_client.Metric, metricFami
 			}
 		}
 		if !found {
-			// this metric didn't matches, but maybe another one will
+			// this metric didn't match, but maybe another one will
 			return 0, false
 		}
 	}
