@@ -187,7 +187,7 @@ func (a *activator) updateIndex() {
 					appsByHost[fmt.Sprintf("%s:%d", loadBalancerIngress.IP, port.Port)] = app // nolint: lll
 				}
 			}
-			// Node honame/IP:node-port
+			// Node hostname/IP:node-port
 			if port.NodePort != 0 {
 				for nodeAddress := range a.nodeAddresses {
 					appsByHost[fmt.Sprintf("%s:%d", nodeAddress, port.NodePort)] = app
