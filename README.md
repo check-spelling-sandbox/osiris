@@ -74,13 +74,13 @@ Prerequisites:
 
 First, add the Osiris charts repository:
 
-```
+```sh
 helm repo add osiris https://dailymotion-oss.github.io/osiris/charts
 ```
 
 And then install it:
 
-```
+```sh
 helm install osiris/osiris \
   --name osiris \
   --namespace osiris-system
@@ -99,7 +99,7 @@ The following table lists the configurable parameters of the Helm chart and thei
 
 Example of installation with Helm and a custom configuration:
 
-```
+```sh
 helm install osiris/osiris \
   --name osiris \
   --namespace osiris-system \
@@ -114,27 +114,27 @@ explicitly being directed to do so.
 To enabled the zeroscaler to scale a deployment with idling pods to zero
 replicas, annotate the deployment like so:
 
-```
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  namespace: my-aoo
-  name: my-app
-  annotations:
-    osiris.dm.gg/enableScaling: "true"
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: my-app
-  template:
-    metadata:
-      labels:
-        app: nginx
-      annotations:
-        osiris.dm.gg/collectMetrics: "true"
-    # ...
-  # ...
+```diff
+ apiVersion: apps/v1
+ kind: Deployment
+ metadata:
+   namespace: my-aoo
+   name: my-app
++  annotations:
++    osiris.dm.gg/enableScaling: "true"
+ spec:
+   replicas: 1
+   selector:
+     matchLabels:
+       app: my-app
+   template:
+     metadata:
+       labels:
+         app: nginx
++      annotations:
++        osiris.dm.gg/collectMetrics: "true"
+     # ...
+   # ...
 ```
 
 Note that the template for the pod _also_ uses an annotation to enable Osiris--
@@ -150,19 +150,19 @@ endpoints controller. Such services must also utilize an annotation to indicate
 which deployment should be reactivated when the activator component intercepts a
 request on their behalf. For example:
 
-```
-kind: Service
-apiVersion: v1
-metadata:
-  namespace: my-namespace
-  name: my-app
-  annotations:
-    osiris.dm.gg/manageEndpoints: "true"
-    osiris.dm.gg/deployment: my-app
-spec:
-  selector:
-    app: my-app
-  # ...
+```diff
+ kind: Service
+ apiVersion: v1
+ metadata:
+   namespace: my-namespace
+   name: my-app
+   annotations:
++    osiris.dm.gg/manageEndpoints: "true"
++    osiris.dm.gg/deployment: my-app
+ spec:
+   selector:
+     app: my-app
+   # ...
 ```
 
 ### Configuration
@@ -220,7 +220,7 @@ This is the default scraper, which doesn't need any configuration.
 The prometheus scraper retrieves metrics about the request count from your own prometheus endpoint. To use it, your application need to expose an endpoint with metrics in the prometheus format.
 You can then set the following annotation:
 
-```
+```yaml
 annotations:
   osiris.dm.gg/metricsCollector: |
     {
@@ -243,7 +243,7 @@ The schema of the prometheus implementation configuration is:
 
 Deploy the example application `hello-osiris` :
 
-```
+```sh
 kubectl create -f ./example/hello-osiris.yaml
 ```
 
@@ -251,7 +251,7 @@ This will create an Osiris-enabled deployment and service named `hello-osiris`.
 
 Get the External IP of the `hello-osiris` service once it appears:
 
-```
+```sh
 kubectl get service hello-osiris -o jsonpath='{.status.loadBalancer.ingress[*].ip}'
 ```
 
