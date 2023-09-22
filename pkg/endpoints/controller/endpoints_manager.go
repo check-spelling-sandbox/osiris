@@ -18,7 +18,7 @@ import (
 	endpointsv1 "k8s.io/kubernetes/pkg/api/v1/endpoints"
 )
 
-// endpointsManager is a controller responsible for the on-going management of
+// endpointsManager is a controller responsible for the ongoing management of
 // the endpoints resource corresponding to a single Osiris-enabled service
 type endpointsManager struct {
 	service          corev1.Service
